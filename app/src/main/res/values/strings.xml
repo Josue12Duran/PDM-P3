@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">P3Practico-DC20026</string>
+    <string name="action_ver_propietarios">Ver Propietarios</string>
+    <string name="action_agregar_propietarios">Agregar Propietarios</string>
+    <string name="action_ver_inmuebles">Ver Inmuebles</string>
+    <string name="action_agregar_inmuebles">Agregar Inmuebles</string>
 </resources>
