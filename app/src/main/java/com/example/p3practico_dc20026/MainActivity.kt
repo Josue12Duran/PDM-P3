@@ -4,13 +4,20 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Button
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
+    val urlBase = "https://apidc20026.000webhostapp.com/"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -20,6 +27,29 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        try {
+            val retrofit = Retrofit.Builder()
+                .baseUrl(urlBase)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+            val service = retrofit.create(ViewApiInmueble::class.java)
+            lifecycleScope.launch {
+                val response = service.getInmueble()
+                response.forEach {
+                    println(it)
+                }
+
+                runOnUiThread {
+                    val tvhola = findViewById<TextView>(R.id.tvhola)
+                    tvhola.text = response.first().calle
+                }
+            }
+        } catch (e: Exception) {
+            println(e)
+        }
+
+
 
         val toolbar : Toolbar = findViewById(R.id.toolbarMain)
         setSupportActionBar(toolbar)

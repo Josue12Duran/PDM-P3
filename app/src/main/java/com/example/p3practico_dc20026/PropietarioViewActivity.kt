@@ -2,13 +2,20 @@ package com.example.p3practico_dc20026
 
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class PropietarioViewActivity : AppCompatActivity() {
+    val urlBase = "https://apidc20026.000webhostapp.com/"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -24,6 +31,24 @@ class PropietarioViewActivity : AppCompatActivity() {
         supportActionBar?.title = "Ver Propietarios"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
+
+        try {
+            val retrofit = Retrofit.Builder()
+                .baseUrl(urlBase)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+            val service = retrofit.create(ViewApiPropietario::class.java)
+            lifecycleScope.launch {
+                val response = service.getPropietario(1)
+
+                runOnUiThread {
+                    val tvholavp = findViewById<TextView>(R.id.tvholavp)
+                    tvholavp.text = "${response.body()?.nombres} = ${response.body()?.apellidos}"
+                }
+            }
+        } catch (e: Exception) {
+            println(e)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: android.view.Menu): Boolean {
