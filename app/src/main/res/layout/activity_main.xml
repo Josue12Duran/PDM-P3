@@ -8,14 +8,133 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/coffee"
-        android:elevation="4dp"
+        android:elevation="8dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/Theme.Material3.DayNight.Dialog.MinWidth"
+        app:titleTextColor="@color/white" />
+
+    <View
+        android:id="@+id/dividerMain"
+        android:layout_width="0.0001dp"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:id="@+id/dividerHMain"
+        android:layout_width="match_parent"
+        android:layout_height="0.0001dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewTopLeft"
+        android:layout_width="0sp"
+        android:layout_height="100sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="@color/beige"
+        app:cardCornerRadius="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/dividerMain"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/dividerHMain" >
+
+        <Button
+            android:id="@+id/btnVerPropietarios"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent"
+            android:text="@string/action_ver_propietarios"
+            android:textColor="@color/coffee"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewTopRight"
+        android:layout_width="0sp"
+        android:layout_height="100sp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="@color/beige"
+        app:cardCornerRadius="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dividerMain"
+        app:layout_constraintBottom_toTopOf="@+id/dividerHMain" >
+
+        <Button
+            android:id="@+id/btnVerInmuebles"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent"
+            android:text="@string/action_ver_inmuebles"
+            android:textColor="@color/coffee"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewBottomLeft"
+        android:layout_width="0sp"
+        android:layout_height="100sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="@color/beige"
+        app:cardCornerRadius="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/dividerMain"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dividerHMain" >
+
+        <Button
+            android:id="@+id/btnAgregarPropietarios"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent"
+            android:text="@string/action_agregar_propietarios"
+            android:textColor="@color/coffee"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewBottomRight"
+        android:layout_width="0sp"
+        android:layout_height="100sp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="@color/beige"
+        app:cardCornerRadius="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dividerMain"
+        app:layout_constraintTop_toBottomOf="@+id/dividerHMain" >
+
+        <Button
+            android:id="@+id/btnAgregarInmuebles"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent"
+            android:text="@string/action_agregar_inmuebles"
+            android:textColor="@color/coffee"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

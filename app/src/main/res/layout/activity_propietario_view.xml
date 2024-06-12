@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PropietarioViewActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarViewPropietario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/coffee"
+        android:elevation="8dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/Theme.Material3.DayNight.Dialog.MinWidth"
+        app:titleTextColor="@color/white" />
+
+    <EditText
+        android:id="@+id/edtBuscarPropietario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Ingrese el id de un propietario"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarViewPropietario"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnBuscarPropietario" />
+
+    <Button
+        android:id="@+id/btnBuscarPropietario"
+        android:layout_width="48sp"
+        android:layout_height="48sp"
+        android:background="@color/transparent"
+        android:foreground="@drawable/round_search_24"
+        app:iconPadding="0dp"
+        app:iconTint="@color/coffee"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarViewPropietario" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPropietarios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/edtBuscarPropietario" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8sp"
+        app:cardBackgroundColor="@color/beige"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardCornerRadius="8sp" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8sp" >
+
+            <TextView
+                android:id="@+id/tvIdInmuebleLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvIdInmueble"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4sp"
+                android:textSize="16sp"
+                tools:text="0000"
+                app:layout_constraintStart_toEndOf="@+id/tvIdInmuebleLabel"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvPropietarioLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Propietario:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvIdInmuebleLabel" />
+
+            <TextView
+                android:id="@+id/tvPropietario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4sp"
+                android:textSize="16sp"
+                tools:text="Juan Carlos"
+                app:layout_constraintStart_toEndOf="@+id/tvPropietarioLabel"
+                app:layout_constraintTop_toBottomOf="@+id/tvIdInmueble" />
+
+            <TextView
+                android:id="@+id/tvDepartamentoLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Departamento:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvPropietarioLabel" />
+
+            <TextView
+                android:id="@+id/tvDepartamento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4sp"
+                android:textSize="16sp"
+                tools:text="Cochabamba"
+                app:layout_constraintStart_toEndOf="@+id/tvDepartamentoLabel"
+                app:layout_constraintTop_toBottomOf="@+id/tvPropietario" />
+
+            <TextView
+                android:id="@+id/tvMunicipioLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Municipio:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDepartamentoLabel" />
+
+            <TextView
+                android:id="@+id/tvMunicipio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4sp"
+                android:textSize="16sp"
+                tools:text="Cercado"
+                app:layout_constraintStart_toEndOf="@+id/tvMunicipioLabel"
+                app:layout_constraintTop_toBottomOf="@+id/tvDepartamento" />
+
+            <TextView
+                android:id="@+id/tvResidenciaLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Residencia:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvMunicipioLabel" />
+
+            <TextView
+                android:id="@+id/tvResidencia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4sp"
+                android:textSize="16sp"
+                tools:text="Casa"
+                app:layout_constraintStart_toEndOf="@+id/tvResidenciaLabel"
+                app:layout_constraintTop_toBottomOf="@+id/tvMunicipio" />
+
+            <TextView
+                android:id="@+id/tvCalleLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Calle:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvResidenciaLabel" />
+
+            <TextView
+                android:id="@+id/tvCalle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4sp"
+                android:textSize="16sp"
+                tools:text="Calle 1"
+                app:layout_constraintStart_toEndOf="@+id/tvCalleLabel"
+                app:layout_constraintTop_toBottomOf="@+id/tvResidencia" />
+
+            <TextView
+                android:id="@+id/tvPoligonoLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Poligono:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCalleLabel" />
+
+            <TextView
+                android:id="@+id/tvPoligono"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4sp"
+                android:textSize="16sp"
+                tools:text="Poligono 1"
+                app:layout_constraintStart_toEndOf="@+id/tvPoligonoLabel"
+                app:layout_constraintTop_toBottomOf="@+id/tvCalle" />
+
+            <TextView
+                android:id="@+id/tvCasaLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4sp"
+                android:text="#"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/tvPoligono"
+                app:layout_constraintTop_toBottomOf="@+id/tvCalleLabel" />
+
+            <TextView
+                android:id="@+id/tvCasa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4sp"
+                android:textSize="16sp"
+                tools:text="1"
+                app:layout_constraintStart_toEndOf="@+id/tvCasaLabel"
+                app:layout_constraintTop_toBottomOf="@+id/tvCalle" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

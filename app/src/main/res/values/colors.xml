@@ -2,6 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="coffee">#a17856</color>
-    <color name="beige">#cbb098</color>
+    <color name="coffee">#FFA17856</color>
+    <color name="beige">#FFF4E5D6</color>
+    <color name="transparent">#00FFFFFF</color>
 </resources>
+
